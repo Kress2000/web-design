@@ -1,0 +1,77 @@
+@import "../../../public/_variables/variables";
+.container-fluid{
+    //left box----------
+    .lorem{
+        color: $colorOp;
+        font-size: .5rem;
+    }
+    // image
+    .imgBox{
+        background-color: green;
+        position: relative;
+        .img{
+            position: absolute;
+            left: -3rem;
+
+        }
+    }
+    // bottom--titles-
+    .loremTitleBox{
+        margin-top: 12rem;
+        flex-direction: column;
+
+        row-gap: 0;
+        .smallDetails{
+            color: $colorOp;
+            letter-spacing: 1px;
+            font-size: .5rem;
+            // font-family: ;
+            text-transform: uppercase;
+        }
+        .title{
+            color: $colorHeader;
+        }
+
+    }
+    //middle box
+    .middleBox{
+        background-color: transparent;
+        
+    }
+    //right box
+    .rightBox{
+        // background-color: transparent;
+        .img-under{
+            right: calc(150px / 3);
+            z-index: 1;
+        }
+        .img-upper{
+            right: -3rem;
+            z-index: 2;
+        }
+    }
+}
+@media screen and (max-width: 800px){
+    // //right box
+    .rightBox{
+        .innerBox{
+            .img-upper{
+                margin-top: 100px;
+            }
+            .img-under{
+                margin-top: 100px;
+            }
+        }
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .innerBox{
+        .img-upper{
+            margin-top:0;
+        }
+        .img-under{
+            margin-top: 0;
+
+        }
+    }
+  }

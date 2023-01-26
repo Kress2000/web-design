@@ -1,0 +1,29 @@
+@import "../../../public/_variables/variables";
+
+.navbar{
+    // padding: 0 !important;
+    border-bottom: 1px solid $colorOp;
+    .nav-item{
+        height: 100%;
+        transition: $transition;
+        border-bottom: 2px solid transparent;
+        .nav-link{
+            color: $colorOp;
+            &:hover{
+                color: $colorHeader;
+            }
+        }
+        .active{
+            color: $colorOp !important;
+        }
+    }
+    .active{
+        border-bottom: 2px solid $colorHeader;
+        border-radius: 2px;
+    }
+    .navbar-toggler{
+        #navbar-toggler-icon{
+            background-color: $colorHeader;
+        }
+    }
+}
