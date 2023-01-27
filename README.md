@@ -1,4 +1,15 @@
 # WEB DESIGN CHALLENGE
+This is the Reactjs challenge to test my web design skills! I had been given an Adobe XD designed UI and i had to implement  it!
+here is the UI: [Web design from Adobe XD](https://xd.adobe.com/view/3afbdb7d-dd28-41aa-8bed-dde70eea1ff3-6fa8/);
+## you can  now:
+## get my repo here: 
+`git clone https://github.com/Kress2000/web-design.git`
+## Make sure we are using the same node:
+`nvm install 18.13.0`
+## Then you have to
+`npm i && npm start`
+- My work will be live in your browser on Localhost:3000
+
 
 ### Getting Started with Create React App
 
