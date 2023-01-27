@@ -11,11 +11,10 @@ export default function NavbarComp(){
         setNoChange(null);
     }
     const NavLinks=["Home", "Menu", "Services", "Map", "About"];
-
   return (
     <nav className="navbar navbar-expand-lg navbar-light mb-3 p-0 bg-none">
-         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon" id="navbar-toggler-icon"></span>
+         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon" id="navbar-toggler-icon"></span>
         </button>
         <a className="navbar-brand" href="#"><img src={Logo} /></a>
 

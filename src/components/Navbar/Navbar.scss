@@ -9,6 +9,7 @@
         border-bottom: 2px solid transparent;
         .nav-link{
             color: $colorOp;
+            font-weight: lighter;
             &:hover{
                 color: $colorHeader;
             }

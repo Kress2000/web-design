@@ -4,4 +4,83 @@
     display: flex;
     align-items: flex-end;
     background-color: transparent;
+    .footer-nav{
+        border-bottom: 1px solid $colorOp;
+        .footer-link{
+            color: $colorOp;
+            transition: $transition;
+            cursor: pointer;
+            &:hover{
+                color: $colorHeader;
+            }
+        }
+        .active{
+            transform: scale(1.2);
+            color: $colorHeader;
+        }
+    }
+    .line{
+        height: 2px;
+        background-color: $colorHeader;
+        width: 20%;
+        transition: $transition;
+    }
+.rightNav{
+    height: fit-content;
+    .arrows{
+        flex: 1 1 30%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        span{
+            border-radius: 50%;
+            font-size: 1rem;
+            height: 2rem;
+            width: 2rem;
+            border: 2px solid $colorHeader;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+    }
+    // arrowa box
+    .medias{
+        flex: 1 1 50%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        a{
+            border-radius: 50%;
+            font-size: 1rem;
+            border: 2px solid $colorBlack;
+            height: 3rem;
+            width: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            transition: $transition;
+            &:hover{
+                background-color: $colorBlack;
+            }
+        }
+    }
+
+}
+}
+// small devices----
+@media screen and (max-width: 600px){
+    .footer{
+        background-color: green;
+        width: 100px;
+        // margin-top: 100vh !important;
+        display: flex;
+    }
+    
+}
+@media screen and (max-width: 300px) {
+    body{
+      padding: .3rem;
+    }
+    
 }
