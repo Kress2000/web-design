@@ -1,5 +1,13 @@
 import React, { useState } from 'react';
+import {BsArrowLeft} from 'react-icons/bs';
+import {BsArrowRight} from 'react-icons/bs';
+import {BsInstagram} from 'react-icons/bs';
+import {TfiTwitter} from 'react-icons/tfi';
+import {SlSocialFacebook} from 'react-icons/sl';
+import {TbBrandGithub} from 'react-icons/tb';
+
 import "./Footer.scss";
+
 
 export default function Footer() {
   const [activeFooterLink, setActiveFooterLink]=useState({})
@@ -24,19 +32,19 @@ export default function Footer() {
         <p className='line w-20 m-0 p-0' style={activeFooterLink?activeFooterLink:{width:"20%"}}></p>
       </div>
       <div className='col-12 col-md-6 p-1 d-flex justify-content-between rightNav'>
-        <div className='arrows'>
-          <span className='text-dark me-1 me-lg-1 me-xl-3 border-light'>
-            x
+        <div className='arrows child1'>
+          <span className='text-dark justify-content-end me-4 border-light'>
+            <BsArrowLeft  className='smallArrowsL'/>
           </span>
-          <span className='text-dark justify-content-end me-1 me-lg-1 me-xl-3 border-light'>
-            x
+          <span className='text-dark justify-content-start ms-4 me-0 border-light'>
+            <BsArrowRight className='smallArrowsR' />
           </span>
         </div>
-        <div className='medias'>
-          <a className='text-light me-1 me-lg-1 me-xl-3' href=''>a</a>
-          <a className='text-light me-1 me-lg-1 me-xl-3' href=''>a</a>
-          <a className='text-light me-1 me-lg-1 me-xl-3' href=''>a</a>
-          <a className='text-light me-1 me-lg-1 me-xl-3' href=''>a</a>
+        <div className='medias child2'>
+          <a className='text-light me-1 me-lg-1 me-xl-3' href=''><TbBrandGithub /></a>
+          <a className='text-light me-1 me-lg-1 me-xl-3' href=''><BsInstagram /></a>
+          <a className='text-light me-1 me-lg-1 me-xl-3' href=''><TfiTwitter /></a>
+          <a className='text-light me-1 me-lg-1 me-xl-3' href=''><SlSocialFacebook /></a>
         </div>
       </div>
     </div>
