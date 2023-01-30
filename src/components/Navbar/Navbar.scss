@@ -1,12 +1,15 @@
 @import "../../../public/_variables/variables";
 
-.navbar{
-    // padding: 0 !important;
+#navbar{
     border-bottom: 1px solid $colorOp;
+    padding: 0;
     .nav-item{
         height: 100%;
         transition: $transition;
+        border-radius: 2px;
         border-bottom: 2px solid transparent;
+        margin: 0;
+        margin-bottom: -4px;
         .nav-link{
             color: $colorOp;
             font-weight: lighter;
@@ -14,13 +17,12 @@
                 color: $colorHeader;
             }
         }
-        .active{
-            color: $colorOp !important;
-        }
+    }
+    #homeActive{
+        border-bottom: 2px solid $colorHeader;
     }
     .active{
         border-bottom: 2px solid $colorHeader;
-        border-radius: 2px;
     }
     .navbar-toggler{
         #navbar-toggler-icon{

@@ -1,9 +1,5 @@
 import React from 'react';
 import "./BodyContent.scss";
-import ImgLeft from "../Assets/imgs/food-semired.png";
-import MiddleImg from "../Assets/imgs/foodmeal.png";
-import NumberImg from "../Assets/imgs/number.png";
-import FoodWhite from "../Assets/imgs/foodwhite.png";
 
 export default function BodyContent() {
   return (
@@ -15,7 +11,7 @@ export default function BodyContent() {
                 In luctus quam nec sem euismod aliquam. Nullam commodo enim lorem, id ultrices elit mattis at. Nunc tellus augue.
             </p>
             <div className='imgBox'>
-                <img src={ImgLeft} className="img img-fluid" width="200" height="200" alt='Img'/>
+                <img src="/imgs/food-semired.png" className="img img-fluid" width="200" height="200" alt='Img'/>
             </div>
             <div className='loremTitleBox'>
                 <p className='text-sm smallDetails m-0'>Lorem ipsum dolor sit amet, consectetur</p>
@@ -23,15 +19,11 @@ export default function BodyContent() {
             </div>
         </div>
         <div className='col-12 col-md-6 col-lg-4 middleBox d-flex justify-content-center p-0 align-items-center'>
-            <div className='row container-fluid m-0 h-100'>
-            <img src={MiddleImg} className="img img-fluid w-100 h-100 col-12" alt='Img'/>
-            </div>
-
         </div>
         <div className='col-12 col-md-6 col-lg-4 rightBox p-0'>
             <div className='d-flex align-items-lg-center w-100 rightBox-inner h-100 m-0 innerBox '>
-                <img src={NumberImg} className="img img-fluid img-under " width="200" height="200" alt='Img'/>
-                <img src={FoodWhite} className="img img-fluid img-upper " width="200" height="200" alt='Img'/>
+                <img src="/imgs/number.png" className="img img-fluid img-under "  alt='Img'/>
+                <img src="/imgs/foodwhite.png" className="img img-fluid img-upper " alt='Img'/>
             </div>
         </div>
     </div>

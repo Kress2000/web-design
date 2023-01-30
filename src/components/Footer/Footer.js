@@ -21,12 +21,31 @@ export default function Footer() {
     setActiveFooterLink(styles)
     setActiveLink(index)
   }
+  const medias=[
+    {
+      icon: <TbBrandGithub />,
+      href: ""
+    },
+    {
+      icon: <BsInstagram />,
+      href: ""
+    },
+    {
+      icon: <TfiTwitter />,
+      href: ""
+    },
+    {
+      icon: <SlSocialFacebook />,
+      href: ""
+    },
+
+  ]
   return (
     <div className='footer container-fluid row mt-2 p-0'>
       <div className='col-12 col-md-6'>
         <div className='nav footer-nav m-0 p-0'>
           {footerArray.map((item, index)=>(
-            <a className={ActiveLink===index?'footer-link nav-link active p-0 me-3':'footer-link nav-link p-0 me-3'} key={index} onClick={()=>handleFooterNavLine(item, index)}>{item}</a>
+            <a className={ActiveLink===index?'footer-link nav-link active p-0 me-3':'footer-link nav-link p-0 me-3'} key={index} onClick={()=>handleFooterNavLine(item, index)}>0{item}</a>
           ))}
         </div>
         <p className='line w-20 m-0 p-0' style={activeFooterLink?activeFooterLink:{width:"20%"}}></p>
@@ -41,10 +60,7 @@ export default function Footer() {
           </span>
         </div>
         <div className='medias child2'>
-          <a className='text-light me-1 me-lg-1 me-xl-3' href=''><TbBrandGithub /></a>
-          <a className='text-light me-1 me-lg-1 me-xl-3' href=''><BsInstagram /></a>
-          <a className='text-light me-1 me-lg-1 me-xl-3' href=''><TfiTwitter /></a>
-          <a className='text-light me-1 me-lg-1 me-xl-3' href=''><SlSocialFacebook /></a>
+          {medias.map((media, i)=> <a key={i} className='text-light me-1 me-lg-1 me-xl-3' href={media.href}>{media.icon}</a>)}
         </div>
       </div>
     </div>
