@@ -30,3 +30,32 @@
         }
     }
 }
+@media screen and (min-width: 1920px){
+    #navbar{
+        .navbar-brand{
+            img{
+                height: 4rem;
+                width: 4rem;
+            }
+        }
+        .nav-item{
+            border-radius: 5px;
+            border-bottom: 5px solid transparent;
+            margin: 0;
+            margin-bottom: -7px;
+            .nav-link{
+                font-size: 3rem;
+                margin-right: 1rem;
+                &:hover{
+                    color: $colorHeader;
+                }
+            }
+        }
+        .active{
+            border-bottom: 5px solid $colorHeader;
+        }
+        
+
+    }
+    
+}

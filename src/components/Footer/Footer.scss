@@ -4,12 +4,16 @@
     display: flex;
     align-items: flex-end;
     background-color: transparent;
+    .footer-nav-box{
+        height: 3rem;
+    }
     .footer-nav{
         border-bottom: 1px solid $colorOp;
         .footer-link{
             color: $colorOp;
             transition: $transition;
             cursor: pointer;
+            font-size: .6rem;
             &:hover{
                 color: $colorHeader;
             }
@@ -17,6 +21,9 @@
         .active{
             transform: scale(1.2);
             color: $colorHeader;
+        }
+        #homeActive{
+            transform: scale(2);
         }
     }
     .line{
@@ -75,6 +82,44 @@
 
 }
 }
+//biger medias
+@media screen and (min-width: 1920px){
+    #footer-nav-box{
+        height: 8rem;
+        .footer-nav{
+            .nav-link{
+                font-size: 2rem;
+                margin-right: 3rem !important;
+            }
+        }
+    }
+    #child1{
+            .arrow{
+                height: 4rem;
+                width: 4rem;
+                font-size: 3rem;
+                .smallArrowsR{
+                    margin-left: -1rem;
+                }
+                .smallArrowsL{
+                    margin-right: -1rem;
+                }
+    
+            }
+        
+    }
+    .rightNav{
+        #medias{
+            .alink{
+                border: 1.5px solid $colorBlack;
+                height: 7rem;
+                width: 7rem;
+                font-size: 4rem;
+            }
+        }
+    }
+
+}
 // small devices----
 @media screen and (max-width: 600px){
     .footer{
@@ -83,9 +128,12 @@
 }
 @media screen and (max-width: 380px) {
     .footer{
+        #footer-nav{
+            justify-content: center;
+        }
         .rightNav{
             display: flex;
-            flex-direction: column !important;
+            flex-direction: column;
             >div{
                 flex: 1 1 50%;
                 display: flex;
@@ -95,10 +143,19 @@
                 padding: 1rem 0;
             }
             .child2{
-                justify-content: space-between !important;
+                justify-content: space-between;
+                padding-left: 1rem;
+                justify-content: center;
+                width: 100vw;
+                #medias{
+                    padding: 0 1rem;
+                    background-color: black !important;
+
+                }
             }
 
         }
-    }
     
+    }
 }
+
