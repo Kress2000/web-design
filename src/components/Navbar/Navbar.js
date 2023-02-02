@@ -12,22 +12,21 @@ export default function NavbarComp(){
     }
     const NavLinks=["Home", "Menu", "Services", "Map", "About"];
   return (
-    <nav className="navbar navbar-expand-md navbar-light mb-3 p-0 m-0 bg-none" id="navbar">
-        <a className="navbar-brand" href="#"><img src="./imgs/logo.svg" /></a>
+    <nav className="navbar navbar-expand-md navbar-light" id="navbar">
+        <a className="navbar-brand" href><img src="./imgs/logo.svg" alt="logo"/></a>
          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon" id="navbar-toggler-icon"></span>
+        <img src="./imgs/Humbaga.svg" alt="Humbaga img" id="navbar-toggler-icon"/>
         </button>
-
         <div className="collapse navbar-collapse m-0" id="navbarSupportedContent">
             <ul className="navbar-nav ms-md-auto me-auto mt-2 mt-md-0">
                 {NavLinks.map((link, index)=>(
-                    <li key={index} className={isLinkActive===index?"nav-item active":"nav-item mx-0 mx-lg-1"} onClick={()=>toggleActive(index)} id={idHome && index===0?"homeActive": ""}>
-                        <a className={index===noChange?"nav-link active":"nav-link"} href="#">{link}</a>
+                    <li key={index} className={isLinkActive===index?"nav-item mx-0 mx-lg-1 active":"nav-item mx-0 mx-lg-1"} onClick={()=>toggleActive(index)} id={idHome && index===0?"homeActive": ""}>
+                        <a className={index===noChange?"nav-link active":"nav-link"} href>{link}</a>
                     </li>
                 ))}
             </ul>
         </div>
-        <img className="d-none ms-auto d-lg-flex" src="./imgs/Humbaga.svg"/>
+        <img className="d-none ms-auto d-lg-flex" src="./imgs/Humbaga.svg" alt="Humbaga img"/>
     </nav>
   );
 }

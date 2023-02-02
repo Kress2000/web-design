@@ -1,18 +1,27 @@
 @import "../../../public/_variables/variables";
+@import "../../../public/_mixins/mixins";
+
 .footer{
     flex: 1 1 10%;
     display: flex;
+    margin-top: 57px;;
     align-items: flex-end;
-    background-color: transparent;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .footer-nav-box{
-        height: 3rem;
+        height: 41px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
     .footer-nav{
-        border-bottom: 1px solid $colorOp;
+        @include line-border;
+        border-bottom-width: 2px;
         .footer-link{
             color: $colorOp;
             transition: $transition;
-            cursor: pointer;
             font-size: .6rem;
             &:hover{
                 color: $colorHeader;
@@ -28,27 +37,42 @@
     }
     .line{
         height: 2px;
+        margin: -2px 0 0 0;
         background-color: $colorHeader;
         width: 20%;
         transition: $transition;
     }
 .rightNav{
     height: fit-content;
+    #child1{
+        @include breakpoint (tablets){
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        }
+        @include breakpoint (md){
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         }
+    }
     .arrows{
         flex: 1 1 30%;
         display: flex;
         justify-content: center;
         align-items: flex-end;
         span{
-            border-radius: 50%;
+            @include alink-props;
             font-size: 1rem;
-            height: 2rem;
-            width: 2rem;
-            border: 2px solid $colorHeader;
-            display: flex;
-            align-items: center;
+            height: 45px;
+            width: 45px;
+            border: 1.5px solid $colorHeader;
             cursor: pointer;
             font-size: 1.5rem;
+            @include breakpoint (laptop-lg){
+                height: 30px;
+                width: 30px;
+            }
             .smallArrowsR{
                 margin-left: -.5rem;
             }
@@ -57,105 +81,26 @@
             }
         }
     }
-    // arrowa box
+    // arrows box
     .medias{
         flex: 1 1 50%;
         display: flex;
         justify-content: flex-end;
         align-items: flex-end;
         a{
-            border-radius: 50%;
+            @include alink-props;
             font-size: 1.5rem;
             border: 1.5px solid $colorBlack;
-            height: 3rem;
-            width: 3rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-            transition: $transition;
+            height: 60px;
+            width: 60px;
+            @include breakpoint (laptop-lg){
+                height: 45px;
+                width: 45px;
+            }
             &:hover{
                 background-color: $colorBlack;
             }
         }
     }
-
 }
 }
-//biger medias
-@media screen and (min-width: 1920px){
-    #footer-nav-box{
-        height: 8rem;
-        .footer-nav{
-            .nav-link{
-                font-size: 2rem;
-                margin-right: 3rem !important;
-            }
-        }
-    }
-    #child1{
-            .arrow{
-                height: 4rem;
-                width: 4rem;
-                font-size: 3rem;
-                .smallArrowsR{
-                    margin-left: -1rem;
-                }
-                .smallArrowsL{
-                    margin-right: -1rem;
-                }
-    
-            }
-        
-    }
-    .rightNav{
-        #medias{
-            .alink{
-                border: 1.5px solid $colorBlack;
-                height: 7rem;
-                width: 7rem;
-                font-size: 4rem;
-            }
-        }
-    }
-
-}
-// small devices----
-@media screen and (max-width: 600px){
-    .footer{
-        width: 100px;
-    }
-}
-@media screen and (max-width: 380px) {
-    .footer{
-        #footer-nav{
-            justify-content: center;
-        }
-        .rightNav{
-            display: flex;
-            flex-direction: column;
-            >div{
-                flex: 1 1 50%;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                width: 100%;
-                padding: 1rem 0;
-            }
-            .child2{
-                justify-content: space-between;
-                padding-left: 1rem;
-                justify-content: center;
-                width: 100vw;
-                #medias{
-                    padding: 0 1rem;
-                    background-color: black !important;
-
-                }
-            }
-
-        }
-    
-    }
-}
-

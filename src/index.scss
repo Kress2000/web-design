@@ -1,5 +1,5 @@
 @import "../public/_variables/variables";
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,500;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,200;1,300&family=Ubuntu:ital,wght@0,300;0,500;1,400;1,700&display=swap');
 
 
 /* Scrollbar */
@@ -18,28 +18,15 @@
   background-color: $colorOp; 
   transition: $transition;
 }
+//body
+*{
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: $bg;
-  overflow-x: hidden;
-  min-height: 100vh;
   width: 100vw;
-  *{
-    box-sizing: border-box;
-    font-family: 'Ubuntu', sans-serif;
-  }
+  overflow-x: hidden;
 }
-// @media screen and (max-width: 600px){
-//   body{
-//     padding: 1rem;
-//   }
-  
-// }
-// @media screen and (max-width: 300px) {
-//   body{
-//     padding: .3rem;
-//   }
-  
-// }

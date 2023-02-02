@@ -1,0 +1,56 @@
+
+@import '../_variables/variables';
+
+@mixin comp-width{ //to be used where ever we start component
+    width: 100wv;
+    margin: 0;
+}
+// structure of lorem 
+@mixin font-weight-p {
+    color: $colorOp;
+    font-weight: bold;
+}
+@mixin line-border{
+    cursor: pointer;
+    border-bottom: 1px solid $colorOp;
+
+}
+@mixin alink-props{
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: $transition;
+}
+//Break points medias
+@mixin breakpoint ($point){
+    @if $point == fkscreen{
+        @media screen and (min-width: 2560px) { @content;}
+    }
+    @if $point == fullHD{
+        @media screen and (min-width: 1920px) { @content;}
+    }
+    @else if $point == laptop-lg{
+        @media screen and (min-width: 1024px) { @content;}
+    }
+    @else if $point == laptop{
+        @media screen and (max-width: 1024px) { @content;}
+    }
+    @else if $point == tabletsLg{
+        @media screen and (max-width: 1000px) { @content;}
+    }
+    @else if $point == tablets{
+        @media screen and (max-width: 900px) { @content;}
+    }
+    @else if $point == md{
+        @media screen and (max-width: 600px) { @content;}
+    }
+    @else if $point == sm{
+        @media screen and (max-width: 300px) { @content;}
+    }
+    @else if $point == xsm{
+        @media screen and (max-width: 200px) { @content;}
+    }
+}
+

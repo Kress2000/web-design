@@ -1,255 +1,71 @@
 @import "../../../public/_variables/variables";
+@import "../../../public/_mixins/mixins";
+
 .bodyContainer{
     //left box----------
-    height: fit-content;
-    .lorem{
-        color: $colorOp;
-        font-size: .8rem;
-    }
-    // // image
-    .imgBox{
-        position: relative;
-        .img{
-            position: absolute;
-            left: -3rem;
-            height: 15rem
+    .fisrtBox{
+        row-gap: 50px;
+        @include breakpoint (laptop-lg){
+            row-gap: 30px;
+                }
+        @include breakpoint (tablets){
+            row-gap: 20px;
+                }
+        @include breakpoint (md){
+            row-gap: 16px;
+                }
+        @include breakpoint (xsm){
+            row-gap: 10px;
+                }
+        .loremTitleBox{
+            flex-direction: column;
+            row-gap: 0;
+            .smallDetails{
+                @include font-weight-p;
+                letter-spacing: 1px;
+                font-size: .3rem;
+                text-transform: uppercase;
+                @include breakpoint (fullHD){
+                    font-size: .7rem;
+                }
+                @include breakpoint (laptop-lg){
+                    font-size: .7rem;
+                }
+                @include breakpoint (laptop){
+                    font-size: .4rem;
+                }
+            }
+            .title{
+                color: $colorHeader;
+                font-size: 50px;
+                font-weight: bolder;
+                @include breakpoint (fullHD){
+                    font-size: 5rem;
+                }
+                @include breakpoint (laptop){
+                    font-size: 2rem;
+                }
+                @include breakpoint (tablets){
+                }
+                @include breakpoint (md){
+                    font-size: 1.5rem;
+                }
+            }
         }
     }
-
-    // bottom--titles-
-    .loremTitleBox{
-        margin-top: 20rem;
-        flex-direction: column;
-        row-gap: 0;
-        .smallDetails{
-            color: $colorOp;
-            letter-spacing: 1px;
-            font-size: .5rem;
-            text-transform: uppercase;
-        }
-        .title{
-            color: $colorHeader;
-        }
-    }
-    //middle box
     .middleBox{
         background-image: url("../../../public/imgs/foodmeal.png");
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
-    }
-    //right box
-    .rightBox{
-        justify-content: center;
-        align-items: center;
-        .img-under{
-            z-index: 1;
-            right: -10rem;
-            height: 50%;
+        @include breakpoint (tablets){
+            min-height: 50vh;
         }
-        .img-upper{
-            z-index: 2;
-            right: -2rem;
-            height: 50%;
-
-        }
-
     }
     
-}
-// biggest medas 
-@media screen and (min-width: 1920px){
-    .bodyContainer{
-        overflow-x: hidden;
-        .fisrtBox{
-            display: flex;
-            flex-direction: column;
-                height: max-content;
-            .img{
-                height: 30rem;
-            }
-
-            .lorem{
-                font-size: 2rem;
-            }
-            .imgBox{
-                position: relative;
-                margin-top: 2rem;
-                .img{
-                    position: absolute;
-                    left: -4rem;
-                }
-            }
-            
-            // bottom--titles-
-            .loremTitleBox{
-                margin-top: 30rem;
-                flex-direction: column;
-                row-gap: 0;
-                .smallDetails{
-                    color: $colorOp;
-                    font-size: 2rem;
-                }
-                .title{
-                    font-size: 8rem;
-                }
-            }
-        }
-    }
-    .rightBox{
-        justify-content: center;
-        align-items: center;
-        .img-under{
-            z-index: 1;
-            height: 30rem;
-        }
-        .img-upper{
-            z-index: 2;
-            height: 30rem;
-        }
-    }
-}
- //biggers medias
-@media screen and (max-width: 1200px){
-    .bodyContainer{
-       
-        //  image
-        .imgBox{
-            position: relative;
-            .img{
-                position: absolute;
-                left: -3rem;
-                height: 13rem
-            }
-        }
-                // bottom--titles-
-                .loremTitleBox{
-                    margin-top: 12rem;
-                }
-    
-        // bottom--titles-
-        .loremTitleBox{
-            .smallDetails{
-                font-size: .6rem;
-            }
-            .title{
-                color: $colorHeader;
-            }
-        }
-        //middle box
-        .middleBox{
-        background-size:contain;
-        }
-        //right box
-        .rightBox{
-            justify-content: center;
-            align-items: center;
-            .img-under{
-                right: -9rem;
-                height: 40%;
-            }
-            .img-upper{
-                right: -2rem;
-                height: 40%;
-            }
-        }   
-    }
-}
-
-//biggers medias
-@media screen and (max-width: 950px){
-    .bodyContainer{
-        .imgBox{
-            position: relative;
-            .img{
-                height: 10rem;
-                left: 0;
-            }
-        }
-        //right box
-        #rightBox{
-            align-self: center;
-            justify-content: flex-end;
-            margin-top: 2rem;
-            .img-under{
-                left: -1rem;
-                height: 10rem;
-            }
-            .img-upper{
-                height: 10rem;
-                left: -7rem ;
-            }
-        }   
-    }
-}
-  @media screen and (max-width: 768px) {
-    .bodyContainer{
-        display: flex;
-        flex-direction: column;
-        row-gap: 1rem;
-        .middleBox{
-            height: 50vh;
-            width: 70vw;
-            align-self: center;
-        }
-        //right box
-        #rightBox{
-            align-self: center;
-            justify-content: center;
-            margin-top: 2rem;
-            .img-under{
-                left: 2rem;
-            }
-            .img-upper{
-                left: -3rem ;
-            }
-        }   
-    }
-}
-@media screen and (max-width: 300px) {
-    .bodyContainer{
-        .fisrtBox{
-            .lorem{
-                font-size: .7rem;
-            }
-        }
-        .middleBox{
-            width: 90vw;
-            align-self: center;
-        }
-        //right box
-        #rightBox{
-            justify-content: flex-end;
-            .img-under{
-                left: 6rem;
-            }
-            .img-upper{
-                left: 2rem;
-            }
-        }   
-    }
-}
-@media screen and (max-width: 200px) {
-    .bodyContainer{
-        .fisrtBox{
-            .lorem{
-                font-size: .5rem;
-            }
-        }
-        .middleBox{
-            width: 90vw;
-            align-self: center;
-        }
-        //right box
-        #rightBox{
-            justify-content: flex-end;
-            .img-under{
-                left: 80vw;
-                top: -4rem;
-            }
-            .img-upper{
-                left: 0;
-            }
-        }   
+    .number2{
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-color: white;
+        -webkit-text-stroke-width: 5px;
     }
 }

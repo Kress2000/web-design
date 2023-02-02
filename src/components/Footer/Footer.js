@@ -8,7 +8,6 @@ import {TbBrandGithub} from 'react-icons/tb';
 
 import "./Footer.scss";
 
-
 export default function Footer() {
   const [activeFooterLink, setActiveFooterLink]=useState({})
   const [ActiveLink, setActiveLink]=useState(null);
@@ -43,14 +42,14 @@ export default function Footer() {
 
   ]
   return (
-    <div className='footer container-fluid row mt-2 p-0'>
+    <div className='footer container-fluid row p-0'>
       <div className='col-12 col-md-6 footer-nav-box d-flex flex-column justify-content-center' id='footer-nav-box'>
-        <div className='nav footer-nav m-0 p-0' id='footer-nav'>
+        <div className='nav footer-nav m-0 py-2' id='footer-nav'>
           {footerArray.map((item, index)=>(
-            <a id={homeActive && index===0?"homeActive": ""} className={ActiveLink===index?'footer-link nav-link active p-0 me-3':'footer-link nav-link p-0 me-3'} key={index} onClick={()=>handleFooterNavLine(item, index)}>0{item}</a>
+            <a id={homeActive && index===0?"homeActive": ""} className={ActiveLink===index?'footer-link nav-link active p-0 me-3':'footer-link nav-link p-0 me-3'} key={index} onClick={()=>handleFooterNavLine(item, index)} href>0{item}</a>
           ))}
         </div>
-        <p className='line w-20 m-0 p-0' style={activeFooterLink?activeFooterLink:{width:"20%"}}></p>
+        <p className='line w-20 p-0' style={activeFooterLink?activeFooterLink:{width:"20%"}}></p>
       </div>
       <div className='col-12 col-md-6 p-1 d-flex justify-content-between align-items-center row rightNav' id='rightNav'>
         <div className='arrows child1 mt-2 mb-2 mb-lg-0 mt-md-0' id='child1'>

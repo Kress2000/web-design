@@ -1,26 +1,17 @@
 @import "../public/_variables/variables";
-
-
+@import "../public/_mixins/mixins";
 .wrapper{
+  height: 100%;
+  margin: 0;
+  background-color: transparent;
+  width: 100%;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 90vh;
-  width: 100vw;
-  padding: 2rem;
-  align-self: center;
-  overflow-x:  hidden !important;
+  align-items: center;
+  padding: 1rem;
+  @include breakpoint (md){
+  padding: .5rem .1rem;
+}
 }
 
-@media screen and (max-width: 600px){
-  .wrapper{
-    padding: 1rem;
-  }
-  
-}
-@media screen and (max-width: 300px) {
-  .wrapper{
-    padding: .3rem;
-  }
-  
-}
