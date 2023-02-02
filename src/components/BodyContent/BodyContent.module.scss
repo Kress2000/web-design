@@ -5,13 +5,10 @@
     width: 326.09px;
     height: 364px;
     @include breakpoint (laptop-lg){
-        width: 350px;
-        height: 350px;
-    }
-    @include breakpoint (laptop){
         width: 300px;
         height: 300px;
     }
+   
     @include breakpoint (md){
         width: 300px;
         height: 300px;
@@ -77,7 +74,7 @@
         transform: translate(100%);
     }
     @include breakpoint (laptop-lg){
-        font-size: 350px;
+        font-size: 300px;
         transform: translate(50%);
     }
     @include breakpoint (laptop){
@@ -107,9 +104,12 @@
     }
 }
 .p{
-    font-size: 1rem;
+    font-size: .8rem;
     @include font-weight-p;
     @include breakpoint (sm){
         font-size: .7rem;
+    }
+    @include breakpoint (fullHD){
+        font-size: 1rem;
     }
 }
