@@ -42,8 +42,13 @@
 }
 .imgleft{
     transform: translate(50%);
+    @include breakpoint (fullHD){
+        transform: translate(110%);
+        margin-right: -180px;
+    }
     @include breakpoint (fkscreen){
-        transform: translate(100%);
+        transform: translate(140%);
+        margin-right: -364px;
     }
     @include breakpoint (laptop-lg){
         transform: translate(10%);
