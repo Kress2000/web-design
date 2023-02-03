@@ -1,120 +1,138 @@
-@import '../../../public/_mixins/mixins';
-@import '../../../public/_variables/variables';
+@import '/public/_mixins/mixins';
+@import "/public/_variables/variables";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,200;1,300;1,900&family=Ubuntu:ital,wght@0,300;0,500;1,400;1,700&display=swap');
 
-.img{
-    width: 326.09px;
-    height: 364px;
-    @include breakpoint (laptop-lg){
-        width: 300px;
-        height: 300px;
-    }
-   
-    @include breakpoint (md){
-        width: 300px;
-        height: 300px;
-    }
-    @include breakpoint (sm){
-        width: 200px;
-        height: 200px;
-    }
-    @include breakpoint (xsm){
-        width: 150px;
-        height: 150px;
-    }
+.bodyContainer{
+    flex: 1 1 40%;
 }
-.imgL{
-    transform: translate(50%);
-    @include breakpoint (laptop-lg){
-        transform: translate(-50%);
-    }
-    @include breakpoint (tablets){
-        transform: translate(-50%);
-    }  
-    @include breakpoint (sm){
-        transform: translate(0%);
-    }
-    @include breakpoint (xsm){
-        transform: translate(10%);
-    }
-    @include breakpoint (md){
-        transform: translate(50%);
-    }
+.middleBox{
+    flex: 1 1 50%;
+    background-image: url("../../../public/imgs/foodmeal.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
-.imgleft{
-    transform: translate(50%);
-    @include breakpoint (fullHD){
-        transform: translate(110%);
-        margin-right: -180px;
-    }
-    @include breakpoint (fkscreen){
-        transform: translate(140%);
-        margin-right: -364px;
-    }
-    @include breakpoint (laptop-lg){
-        transform: translate(10%);
-    }
-    @include breakpoint (laptop-lg){
-        transform: translate(10%);
-    }
-    @include breakpoint (tabletsLg){
-        transform: translate(-60%);
-        margin-bottom: -5rem;
-    }
-    @include breakpoint (tablets){
-        transform: translate(0);
-        font-size: 200px;
-    }
-    @include breakpoint (sm){
-        margin-bottom: 0;
-    }
-    @include breakpoint (xsm){
-        font-size: 100px;
-        margin-bottom: 150px;    
-    }
+.middleBoxMD{
+    flex: 1 1 40%;
 }
-.h1{
-    font-size: 364px;
-    transform: translate(75%);
-    @include breakpoint (fkscreen){
-        transform: translate(100%);
-    }
-    @include breakpoint (laptop-lg){
-        font-size: 300px;
-        transform: translate(50%);
-    }
-    @include breakpoint (laptop){
-        font-size: 300px;
-        transform: translate();
-    }
-    @include breakpoint (tabletsLg){
-        margin: 0;
-        transform: translate(-80%);
-        margin-bottom: 5rem;
-    }
-    @include breakpoint (tablets){
-        transform: translate(50%);
-        font-size: 200px;
-        margin-top: 4rem;
-    }
-    @include breakpoint (md){
-        font-size: 300px;
-        margin-bottom: 300px;
-    }
-    @include breakpoint (sm){
-        font-size: 200px;
-    }
-    @include breakpoint (xsm){
-        font-size: 150px;
-        transform: translate(40%); 
-    }
+.fisrtBox{
+    justify-content: center;
+}
+.rightBox, 
+.fisrtBox{
+    flex: 1 1 20%;
 }
 .p{
-    font-size: .8rem;
+    @include breakpoint(fk){
+        padding: 0 0 50px 50px;
+      }
+      @include breakpoint(lp-lg){
+        padding: 0 0 30px 30px ;
+      }
+      @include breakpoint(md){
+        padding: 0 0 20px 20px;
+      }
+      @include breakpoint(sm){
+        padding: 0 0 10px 10px;
+      }
     @include font-weight-p;
-    @include breakpoint (sm){
-        font-size: .7rem;
-    }
-    @include breakpoint (fullHD){
-        font-size: 1rem;
-    }
+    @include fontsizeParagraph;
 }
+.loremTitleBox{
+    @include marginLoremDetails;
+}
+.title{
+    font-weight: 900;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    color: $colorHeader;
+    @include fontsizesTitle;
+}
+.smallDetails{
+    color: $colorOp;
+    font-weight: bolder;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    @include fontsizeParagraph;
+}
+// images
+.img, .h1{
+    @include sizeimges;
+}
+.imgLeft{
+    @include breakpoint(fk){
+        margin-left: -153px;
+  }
+     @include breakpoint(lp-lg){
+        margin-left: -100px;
+  }
+  @include breakpoint(lp){
+    margin-left: -94px;
+}
+    @include breakpoint(md){
+        margin-left: -31px;
+  }
+}
+.imgRight{
+    @include breakpoint(fk){
+        margin-right: -153px;
+  }
+     @include breakpoint(lp-lg){
+        margin-right: -100px;
+  }
+  @include breakpoint(lp){
+    margin-right: -94px;
+}
+    @include breakpoint(md){
+        margin-right: -31px;
+  }
+
+
+}
+//number
+.h1Number{
+    @include numberFsize;
+    stroke: $colorOp;
+    color: transparent;
+    stroke-width: 1px;
+    -webkit-text-stroke-color: $colorOp;
+    -webkit-text-stroke-width: 1px;
+    @include breakpoint(fk){
+        margin-right: -153px;
+  }
+     @include breakpoint(lp-lg){
+        margin-right: -100px;
+  }
+  @include breakpoint(lp){
+    margin-right: -94px;
+}
+    @include breakpoint(md){
+        margin-right: -31px;
+  }
+}
+
+
+// @include breakpoint(fk){
+//     background-color: red;
+//   }
+//   @include breakpoint(fhd){
+//     background-color: green;
+//   } 
+        // @include breakpoint(lp-lg){
+//     background-color: black;
+//   }
+        // @include breakpoint(lp){
+//     background-color: blue;
+//   }
+        // @include breakpoint(md){
+//     background-color: orangered;
+//   }
+        // @include breakpoint(sm){
+//     background-color: grey;
+//   }
+//   @include breakpoint(xsm){
+//     background-color: rgb(255, 0, 230);
+//   }
+//   @include breakpoint(xxsm){
+//     background-color: yellow;
+//   }

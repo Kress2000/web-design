@@ -1,32 +1,37 @@
 import React, { useState } from "react";
-import "./Navbar.scss";
+import styles from './Navbar.module.scss';
 
 export default function NavbarComp(){
     const [isLinkActive, setIsLinkActive]= useState(null);
-    const [noChange, setNoChange]= useState(0);
     const [idHome, setIdHome] = useState(true);
     const toggleActive=(id)=>{
         setIsLinkActive(id);
-        setNoChange(null);
         setIdHome(false)
     }
     const NavLinks=["Home", "Menu", "Services", "Map", "About"];
   return (
-    <nav className="navbar navbar-expand-md navbar-light" id="navbar">
-        <a className="navbar-brand" href><img src="./imgs/logo.svg" alt="logo"/></a>
-         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <img src="./imgs/Humbaga.svg" alt="Humbaga img" id="navbar-toggler-icon"/>
+    <nav className={`navbar navbar-expand-md m-0 navbar-light ${styles.navbarHeader}`}>
+        <a className="navbar-brand mr-auto" href><img src="./imgs/logo.svg" alt="logo"/></a>
+         <button className="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <img src="./imgs/Humbaga.svg" alt="Humbaga img" id="navbar-toggler-icon"/>
         </button>
-        <div className="collapse navbar-collapse m-0" id="navbarSupportedContent">
-            <ul className="navbar-nav ms-md-auto me-auto mt-2 mt-md-0">
-                {NavLinks.map((link, index)=>(
-                    <li key={index} className={isLinkActive===index?"nav-item mx-0 mx-lg-1 active":"nav-item mx-0 mx-lg-1"} onClick={()=>toggleActive(index)} id={idHome && index===0?"homeActive": ""}>
-                        <a className={index===noChange?"nav-link active":"nav-link"} href>{link}</a>
-                    </li>
-                ))}
+        <div className="collapse navbar-collapse p-0 h-100" id="navbarSupportedContent">
+            <ul className={`navbar-nav position-relative h-100 p-0 ms-md-auto me-auto`}>
+                {
+                    NavLinks.map((link, index)=>(
+                        <li
+                            key={index}
+                            className={isLinkActive===index?`nav-item h-100 m-0 mx-md-2 my-1 my-md-0 ${styles.navitem} ${styles.active}`: `nav-item ${styles.navitem}  h-100 m-0 mx-md-2 my-1 my-md-0 ${idHome && index===0? styles.active: "nav-item"}`}
+                            onClick={()=>toggleActive(index)}
+                        >
+                            <a className={`nav-link ${styles.navlink}`} href>{link}</a>
+                        </li>
+                    ))
+                }
             </ul>
         </div>
-        <img className="d-none ms-auto d-lg-flex" src="./imgs/Humbaga.svg" alt="Humbaga img"/>
+        <img className="d-none ms-auto d-md-flex" src="./imgs/Humbaga.svg" alt="Humbaga img"/>
     </nav>
   );
 }
+

@@ -1,29 +1,52 @@
 import React from 'react';
-import "./BodyContent.scss";
 import styles from './BodyContent.module.scss';
 
 export default function BodyContent() {
   return (
-    <div className='container-fluid bodyContainer pt-2 pt-lg-3 pt-xxl-5 row bg-none'>
-        <div className='col-12 col-md-4 fisrtBox d-flex flex-column p-0 m-0'>
-            <p className={`${styles.p} text-sm lorem`}>
+    <>
+        <div className={`container-fluid mt-4 p-0 row bg-none d-none d-md-flex ${styles.bodyContainer}`}>
+            <div className={`col-12 col-md-4 ${styles.fisrtBox} ${styles.boxBody} d-flex flex-column p-0 m-0`}>
+                <p className={`${styles.p} text-sm lorem`}>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempus molestie massa,
+                    id vulputate mauris iaculis nec. Quisque elementum risus vel dui efficitur volutpat.
+                </p>
+                <div className='imgBox'>
+                    <img src="/imgs/food-semired.png" className={`${styles.img} ${styles.imgL} img-fluid`} alt='Img'/>
+                </div>
+                <div className={styles.loremTitleBox}>
+                    <p className={`text-sm ${styles.smallDetails} m-0`}>Lorem ipsum dolor sit amet, consectetur</p>
+                    <h1 className={`${styles.title} fw-bolder m-0`}>Lorem ipsum</h1>
+                </div>
+            </div>
+            <div className={`col-12 col-md-4 ${styles.middleBox} ${styles.middleBoxLG} ${styles.boxBody} p-0 m-0`}>
+            </div>
+            <div className={`col-12 col-md-4 d-flex justify-content-center align-items-center ${styles.rightBox} ${styles.boxBody} d-flex p-0 m-0`}>
+                    <h1 src="/imgs/number.png" className={`${styles.h1Number} img-under`}>02</h1>
+                    <img src="/imgs/foodwhite.png" className={`${styles.img} ${styles.imgleft} img-fluid img-upper `} alt='Img'/>
+            </div>
+        </div>
+        {/* SMALLER DEVICES MD TABLETS */}
+        <div className={`bg-warning container-fluid mt-3 d-flex d-md-none d-flex flex-column p-0 row bg-none ${styles.bodyContainer}`}>
+            <p className={`${styles.p} text-sm lorem col-8`}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempus molestie massa,
                 id vulputate mauris iaculis nec. Quisque elementum risus vel dui efficitur volutpat.
             </p>
-            <div className='imgBox'>
-                <img src="/imgs/food-semired.png" className={`${styles.img} ${styles.imgL} img-fluid`} alt='Img'/>
+            <div className={`col-12 ${styles.middleBox} ${styles.middleBoxMD} p-0 m-0`}>
             </div>
-            <div className='loremTitleBox'>
-                <p className='text-sm smallDetails m-0'>Lorem ipsum dolor sit amet, consectetur</p>
-                <h1 className='title fw-bolder m-0'>Lorem ipsum</h1>
+            <div className={`col-12 d-flex justify-content-center align-items-center ${styles.twopicsBox} bg-secondary`}>
+                <div className='imgBox w-100'>
+                        <img src="/imgs/food-semired.png" className={`${styles.img} ${styles.imgLeft} img-fluid`} alt='Img'/>
+                </div>
+                <div className='numberPicBox'>
+                    <h1 src="/imgs/number.png" className={`${styles.h1Number} img-under`}>02</h1>
+                    <img src="/imgs/foodwhite.png" className={`${styles.img} ${styles.imgRight} img-fluid img-upper `} alt='Img'/>
+                </div>
+            </div>
+            <div className={`${styles.loremTitleBox} col-12`}>
+                    <p className={`text-sm ${styles.smallDetails} m-0`}>Lorem ipsum dolor sit amet, consectetur</p>
+                    <h1 className={`${styles.title} fw-bolder m-0`}>Lorem ipsum</h1>
             </div>
         </div>
-        <div className='col-12 col-md-4 middleBox p-0 m-0'>
-        </div>
-        <div className={`col-12 col-md-4 d-flex justify-content-center align-items-center rightBox d-flex p-0 m-0`} id='rightBox'>
-                <h1 src="/imgs/number.png" className={`${styles.h1} number2 img-under`}>02</h1>
-                <img src="/imgs/foodwhite.png" className={`${styles.img} ${styles.imgleft} img-fluid img-upper `} alt='Img'/>
-        </div>
-    </div>
+    </>
   )
 }

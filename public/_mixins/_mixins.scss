@@ -1,19 +1,15 @@
 
 @import '../_variables/variables';
 
-@mixin comp-width{ //to be used where ever we start component
-    width: 100wv;
-    margin: 0;
-}
+
 // structure of lorem 
 @mixin font-weight-p {
     color: $colorOp;
-    font-weight: bold;
+    font-weight: 100;
 }
 @mixin line-border{
     cursor: pointer;
     border-bottom: 1px solid $colorOp;
-
 }
 @mixin alink-props{
     display: flex;
@@ -23,34 +19,133 @@
     text-decoration: none;
     transition: $transition;
 }
-//Break points medias
-@mixin breakpoint ($point){
-    @if $point == fkscreen{
-        @media screen and (min-width: 2560px) { @content;}
+// BREAK POINTS
+
+@mixin breakpoint($point){
+    $my-map: map-get($breakpoints, $point ); 
+    @if $my-map {
+        @media screen and (#{$my-map}) {
+            @content;
+        }
+    } @else{ @error "Opps! Seems like breakpoint #{$point} isn't defined yet!"
+
+    } 
+};
+//PADDINGS ---
+@mixin paddings{
+    padding: 10px !important;
+    @include breakpoint(fk){
+        padding: 50px 50px 0 50px !important;
+      }
+      @include breakpoint(lp-lg){
+        padding: 30px 30px 0 30px !important;
+      }
+      @include breakpoint(md){
+        padding: 20px 20px 0 20px !important;
+      }
+      @include breakpoint(sm){
+        padding: 10px 10px 0 10px !important;
+      }
+};
+@mixin marginLoremDetails{
+    @include breakpoint(fk){
+        margin: 50px auto 0 50px ;
+      }
+    @include breakpoint(lp-lg){
+        margin: 30px auto 0 30px;
+      }
+    @include breakpoint(md){
+        margin: 20px auto 0 20px ;
+      }
+    @include breakpoint(sm){
+        margin: 20px auto 0 20px;
+      }
+};
+//FONT SIZES ----
+@mixin fontSizeuppercase{
+    @include breakpoint(fk){
+        font-size: 82px;
     }
-    @if $point == fullHD{
-        @media screen and (min-width: 1920px) { @content;}
+    @include breakpoint(lp-lg){
+            font-size: 50px;
     }
-    @else if $point == laptop-lg{
-        @media screen and (min-width: 1024px) { @content;}
+    @include breakpoint(md){
+        font-size: 30px;
+}
+}
+//title
+@mixin fontsizesTitle{
+    @include breakpoint(fk){
+        font-size: 82px;
     }
-    @else if $point == laptop{
-        @media screen and (max-width: 1024px) { @content;}
+    @include breakpoint(lp-lg){
+            font-size: 50px;
     }
-    @else if $point == tabletsLg{
-        @media screen and (max-width: 1000px) { @content;}
+    @include breakpoint(md){
+        font-size: 30px;
+}
+}
+//paragraph
+@mixin fontsizeParagraph {
+    @include breakpoint(fk){
+        font-size: 16px;
+      }
+      @include breakpoint(lp-lg){
+        font-size: 12px;
+      }
+      @include breakpoint(md){
+        font-size: 10px;
+      }
+      @include breakpoint(xxsm){
+        font-size: 8px;
+      }
+
+}
+// IMAGES SIZE ---
+@mixin sizeimges{
+    @include breakpoint(fk){
+        height: 404px;
+        width: 404px;
+  }
+     @include breakpoint(lp-lg){
+        height: 232px;
+        width: 232px;
+  }
+  @include breakpoint(lp){
+    height: 200px;
+    width: 200px;
+}
+    @include breakpoint(md){
+        height: 132px;
+        width: 132px;
+  }
+  @include breakpoint(xxsm){
+        height: 100px;
+        width: 100px;
+  }
+
+}
+@mixin numberFsize{
+        @include breakpoint(fk){
+            font-size: 404px;
+            // margin-left: 202px;
+      }
+         @include breakpoint(lp-lg){
+            font-size: 232px;
+            // margin-left: 116px;
+      }
+      @include breakpoint(lp){
+        font-size: 200px;
+        // margin-left: 100px;
     }
-    @else if $point == tablets{
-        @media screen and (max-width: 900px) { @content;}
-    }
-    @else if $point == md{
-        @media screen and (max-width: 600px) { @content;}
-    }
-    @else if $point == sm{
-        @media screen and (max-width: 300px) { @content;}
-    }
-    @else if $point == xsm{
-        @media screen and (max-width: 200px) { @content;}
-    }
+        @include breakpoint(md){
+            font-size: 132px;
+            // margin-left: 69px;
+      }
+      @include breakpoint(xxsm){
+            font-size: 100px;
+            // margin-left: 50px;
+      }
+    
 }
 

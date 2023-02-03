@@ -1,0 +1,33 @@
+@import '/public/_mixins/mixins';
+@import "/public/_variables/variables";
+
+.navbarHeader{
+    border-bottom: 1px solid $colorOp;
+    width: 100%;
+    margin: 0;
+    @include paddings;
+}
+.navitem{
+    height: 100%;
+    transition: $transition;
+    border-bottom: 3px solid transparent;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+.navlink{
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    color: $colorOp;
+    font-weight: 100;
+    &:hover{
+        color: $colorHeader;
+    }
+}
+.homeActive{
+    border-color: $colorHeader;
+}
+.active{
+    border-color: $colorHeader;
+}

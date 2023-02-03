@@ -6,7 +6,7 @@
     display: flex;
     margin-top: 57px;;
     align-items: flex-end;
-    background-color: transparent;
+    background-color: tra;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,7 +45,7 @@
 .rightNav{
     height: fit-content;
     #child1{
-        @include breakpoint (tablets){
+        @include breakpoint (md){
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -69,7 +69,7 @@
             border: 1.5px solid $colorHeader;
             cursor: pointer;
             font-size: 1.5rem;
-            @include breakpoint (laptop-lg){
+            @include breakpoint (lp-lg){
                 height: 30px;
                 width: 30px;
             }
@@ -93,7 +93,7 @@
             border: 1.5px solid $colorBlack;
             height: 60px;
             width: 60px;
-            @include breakpoint (laptop-lg){
+            @include breakpoint (lp-lg){
                 height: 45px;
                 width: 45px;
             }

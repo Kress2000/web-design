@@ -1,8 +1,27 @@
 // colors and bg
 $bg: #E51C24;
 $colorHeader: rgba(255, 255, 255, 0.947);
-$colorOp: #ffffff7e;
+$colorOp: #ffffff7e !important;
 $colorBlack: #171717;
 // transitions
 $transition: all .5s ease-in-out;
 
+$breakpoints: (
+    "xxsm":  "(max-width: 300px)",
+    "xsm": "(min-width: 300px)" and "(max-width: 400px)", // smallest devices
+    "sm": "(min-width: 400px)" and "(max-width: 600px)", // mobile phones
+    "md": "(min-width: 600px)" and "(max-width: 728px)", // tablets
+    "lp": "(min-width: 728px)" and "(max-width: 1024px)", // laptops
+    "lp-lg": "(min-width: 1024px)" and "(max-width: 1440px)", // laptop large
+    "fhd": "(min-width: 1440px)" and "(max-width: 1920px)", // full HD
+    "fk": "(min-width: 1920px)" and "(max-width: 2560px)", //4k screens
+);
+
+// 4k screens (max-width:2560px)
+// 1080 screens (max-width:1920px)
+// Laptop large (max-width:1440px)
+// Laptop (max-width:1024 px)
+// Tablet (max-width:728px)
+// Mobile large(max-width:600px)
+// Mobile medium(max-width:375px)
+// Mobile small (max-width:300px)
