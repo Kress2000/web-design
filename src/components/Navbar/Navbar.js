@@ -10,7 +10,7 @@ export default function NavbarComp(){
     }
     const NavLinks=["Home", "Menu", "Services", "Map", "About"];
   return (
-    <nav className={`navbar navbar-expand-md m-0 navbar-light ${styles.navbarHeader}`}>
+    <nav className={`navbar navbar-expand-md m-0 mb-3 mb-md-0 navbar-light ${styles.navbarHeader}`}>
         <a className="navbar-brand mr-auto" href><img src="./imgs/logo.svg" alt="logo"/></a>
          <button className="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <img src="./imgs/Humbaga.svg" alt="Humbaga img" id="navbar-toggler-icon"/>
@@ -31,6 +31,7 @@ export default function NavbarComp(){
             </ul>
         </div>
         <img className="d-none ms-auto d-md-flex" src="./imgs/Humbaga.svg" alt="Humbaga img"/>
+        <div className={`position-absolute ${styles.line}`}></div>
     </nav>
   );
 }

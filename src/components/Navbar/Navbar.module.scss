@@ -2,10 +2,34 @@
 @import "/public/_variables/variables";
 
 .navbarHeader{
-    border-bottom: 1px solid $colorOp;
     width: 100%;
+    position: relative;
     margin: 0;
     @include paddings;
+}
+.line{
+    height: 1px;
+    background-color: $colorOp;
+    bottom: .5px;
+    @include breakpoint(fk){
+        left: 50px;
+        right: 50px;
+      }
+      @include breakpoint(lp-lg){
+        left: 30px;
+        right: 30px;
+      }
+      @include breakpoint(md){
+        left: 20px;
+        right: 20px;
+        bottom: -.5rem;
+
+
+      }
+      @include breakpoint(sm){
+            right: 10px;
+            left: 10px;
+      }
 }
 .navitem{
     height: 100%;
@@ -14,6 +38,9 @@
     margin: 0;
     position: relative;
     z-index: 2;
+    @include breakpoint(sm){
+        width: fit-content;
+      }
 }
 .navlink{
     cursor: pointer;

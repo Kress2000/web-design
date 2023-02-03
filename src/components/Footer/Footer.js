@@ -5,8 +5,7 @@ import {BsInstagram} from 'react-icons/bs';
 import {TfiTwitter} from 'react-icons/tfi';
 import {SlSocialFacebook} from 'react-icons/sl';
 import {TbBrandGithub} from 'react-icons/tb';
-
-import "./Footer.scss";
+import styles from './Footer.module.scss';
 
 export default function Footer() {
   const [activeFooterLink, setActiveFooterLink]=useState({})
@@ -42,26 +41,26 @@ export default function Footer() {
 
   ]
   return (
-    <div className='footer container-fluid row p-0'>
-      <div className='col-12 col-md-6 footer-nav-box d-flex flex-column justify-content-center' id='footer-nav-box'>
-        <div className='nav footer-nav m-0 py-2' id='footer-nav'>
+    <div className={`footer container-fluid row ${styles.footer}`}>
+      <div className={`col-12 col-md-6 d-flex flex-column position-relative p-0 mb-3 mb-md-0 p-0 ${styles.footernavbox}`}>
+        <div className={`nav py-2 m-0 ${styles.footerNav}`} >
           {footerArray.map((item, index)=>(
-            <a id={homeActive && index===0?"homeActive": ""} className={ActiveLink===index?'footer-link nav-link active p-0 me-3':'footer-link nav-link p-0 me-3'} key={index} onClick={()=>handleFooterNavLine(item, index)} href>0{item}</a>
+            <a className={ActiveLink===index?`${styles.footerlink} nav-link p-0 me-3 me-xxl-5 ${styles.active}`:`${homeActive && index===0?styles.homeActive: ''} nav-link p-0 me-3 me-xxl-5 ${styles.footerlink}`} key={index} onClick={()=>handleFooterNavLine(item, index)} href>0{item}</a>
           ))}
         </div>
-        <p className='line w-20 p-0' style={activeFooterLink?activeFooterLink:{width:"20%"}}></p>
+        <p className={`${styles.line} w-20 position-absolute m-0 s-0 p-0`} style={activeFooterLink?activeFooterLink:{width:"20%"}}></p>
       </div>
-      <div className='col-12 col-md-6 p-1 d-flex justify-content-between align-items-center row rightNav' id='rightNav'>
-        <div className='arrows child1 mt-2 mb-2 mb-lg-0 mt-md-0' id='child1'>
-          <span className='text-dark justify-content-end arrow me-4 border-light'>
-            <BsArrowLeft  className='smallArrowsL'/>
+      <div className={`col-12 col-md-6 p-1 d-flex justify-content-between align-items-center ${styles.rightNav}`}>
+        <div className={`${styles.child1} h-100 d-flex`}>
+          <span className={`text-dark justify-content-end ${styles.arrow} me-3 me-lg-4 me-xxl-5 border-light`}>
+            <BsArrowLeft  className={styles.arrowL}/>
           </span>
-          <span className='text-dark justify-content-start arrow ms-4 me-0 border-light'>
-            <BsArrowRight className='smallArrowsR' />
+          <span className={`text-dark justify-content-start ${styles.arrow} ms-3 ms-lg-4 ms-xxl-5 border-light`}>
+            <BsArrowRight className={styles.arrowR} />
           </span>
         </div>
-        <div className='medias child2 d-flex justify-content-between mt-2 mt-md-0' id="medias">
-          {medias.map((media, i)=> <a key={i} className='text-light me-1 me-lg-1 me-xl-3 alink' href={media.href}>{media.icon}</a>)}
+        <div className={`${styles.child2} d-flex`}>
+          {medias.map((media, i)=> <a key={i} className={`text-light me-3 me-lg-4 me-xl-5 ${styles.alink}`} href={media.href}>{media.icon}</a>)}
         </div>
       </div>
     </div>

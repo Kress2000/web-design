@@ -1,0 +1,154 @@
+@import "../../../public/_variables/variables";
+@import "../../../public/_mixins/mixins";
+
+.footer{
+    @include paddings;
+}
+.footernavbox{
+    height: 41px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: 2px solid $colorOp;
+}
+.footerlink{
+    color: $colorHeader !important;
+    transition: $transition;
+    cursor: pointer;
+    @include font-size-footerlinks;
+    &:hover{
+        color: $colorHeader;
+    }
+}
+.active{
+    transform: scale(1.5);
+    color: $colorHeader;
+}
+.homeActive{
+    transform: scale(1.5);
+}
+.line{
+    height: 2px;
+    background-color: $colorHeader;
+    width: 20%;
+    transition: $transition;
+    bottom: -2px;
+}
+.rightNav{
+    height: fit-content;
+}
+.child1{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1 1 20%;
+    margin: 0;
+    padding: 0;
+    @include breakpoint (md){
+        justify-content: flex-start;
+    }
+}
+.child2{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1 1 60%;
+    margin: 0;
+    padding: 0;
+}
+.arrowR{
+    position: absolute;
+    @include breakpoint (fk){
+    left: -28px;
+    }
+    @include breakpoint (lp-lg){
+        left: -18px;
+    }
+    @include breakpoint (md){
+        left: -13px;
+
+    }
+    @include breakpoint (xxsm){
+        left: -8px;
+    }
+}
+.arrowL{
+    position: absolute;
+    @include breakpoint (fk){
+    right: -28px;
+    }
+    @include breakpoint (lp-lg){
+        right: -18px;
+    }
+    @include breakpoint (md){
+        right: -13px;
+    }
+    @include breakpoint (xxsm){
+        right: -8px;
+    }
+}
+.arrow{
+    @include alink-props;
+    border: 1.5px solid $colorHeader;
+    cursor: pointer;
+    font-size: 1.5rem;
+    position: relative;
+    @include breakpoint (fk){
+        height: 45px;
+        width: 45px;
+        font-size: 50px;
+    }
+    @include breakpoint (lp-lg){
+        height: 30px;
+        width: 30px;
+        font-size: 33px;
+    }
+    @include breakpoint (lp-lg){
+        height: 25px;
+        width: 25px;
+        font-size: 24px;
+    }
+    @include breakpoint (md){
+        height: 20px;
+        width: 20px;
+        font-size: 20px;
+    }
+    @include breakpoint (xxsm){
+        height: 10px;
+        width: 10px;
+        font-size: 6px;
+    }
+}
+// arrows box
+.alink{
+    @include alink-props;
+    margin: 0;
+    cursor: pointer;
+    border: 1.5px solid $colorBlack;
+    @include breakpoint (fk){
+        height: 60px;
+        width: 60px;
+        font-size: 25px
+    }
+    @include breakpoint (lp-lg){
+        height: 45px;
+        width: 45px;
+        font-size: 20px
+    }
+    @include breakpoint (lp){
+        height: 40px;
+        width: 40px;
+    }
+    @include breakpoint (md){
+        height: 30px;
+        width: 30px;
+        font-size: 15px
+    }
+    @include breakpoint (xxsm){
+        height: 20px;
+        width: 20px;
+        font-size: 10px
+
+    }
+
+}

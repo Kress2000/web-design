@@ -11,12 +11,16 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+    @include breakpoint(md){
+        min-height: 40vh;
+}
 }
 .middleBoxMD{
     flex: 1 1 40%;
 }
 .fisrtBox{
-    justify-content: center;
+    justify-content: space-evenly;
+    align-items: flex-start;
 }
 .rightBox, 
 .fisrtBox{
@@ -24,16 +28,16 @@
 }
 .p{
     @include breakpoint(fk){
-        padding: 0 0 50px 50px;
+        margin: 0 0 50px 50px;
       }
       @include breakpoint(lp-lg){
-        padding: 0 0 30px 30px ;
+        margin: 0 0 30px 30px ;
       }
       @include breakpoint(md){
-        padding: 0 0 20px 20px;
+        margin: 0 0 20px 0;
       }
       @include breakpoint(sm){
-        padding: 0 0 10px 10px;
+        margin: 0 0 10px 0;
       }
     @include font-weight-p;
     @include fontsizeParagraph;
@@ -56,83 +60,62 @@
     @include fontsizeParagraph;
 }
 // images
+.imgLeft{
+    @include breakpoint(fk){
+        margin-left: -100px;
+    }
+    @include breakpoint(lp-lg){
+        margin-left: -64px;
+  }
+  @include breakpoint(lp){
+      margin-left: -54px;
+    }
+    @include breakpoint(md){
+        margin-left: -31px;
+    }
+}
 .img, .h1{
     @include sizeimges;
 }
-.imgLeft{
-    @include breakpoint(fk){
-        margin-left: -153px;
-  }
-     @include breakpoint(lp-lg){
-        margin-left: -100px;
-  }
-  @include breakpoint(lp){
-    margin-left: -94px;
-}
-    @include breakpoint(md){
-        margin-left: -31px;
-  }
-}
 .imgRight{
-    @include breakpoint(fk){
-        margin-right: -153px;
-  }
-     @include breakpoint(lp-lg){
-        margin-right: -100px;
-  }
-  @include breakpoint(lp){
-    margin-right: -94px;
+    z-index: 2;
+    position: relative;
+    flex-grow: 0 !important;
+   @include rightSizes;
+@include breakpoint(fk){
+    margin-right: -250px;
 }
-    @include breakpoint(md){
-        margin-right: -31px;
+@include breakpoint(lp-lg){
+    margin-right: -200px;
+}
+@include breakpoint(lp){
+  margin-right: -100px;
+}
+@include breakpoint(md){
+    margin-right: 0;
+    right: -31px;
+    top: 10%;
   }
-
-
 }
 //number
 .h1Number{
     @include numberFsize;
+    z-index: 1;
     stroke: $colorOp;
     color: transparent;
     stroke-width: 1px;
     -webkit-text-stroke-color: $colorOp;
     -webkit-text-stroke-width: 1px;
     @include breakpoint(fk){
-        margin-right: -153px;
-  }
-     @include breakpoint(lp-lg){
-        margin-right: -100px;
-  }
-  @include breakpoint(lp){
-    margin-right: -94px;
-}
+        margin-right: -150px;
+    }
+    @include breakpoint(lp-lg){
+        margin-right: -94px;
+    }
+    @include breakpoint(lp){
+      margin-right: -64px;
+    }
     @include breakpoint(md){
-        margin-right: -31px;
-  }
+        margin-right: 50px;
+    }
 }
-
-
-// @include breakpoint(fk){
-//     background-color: red;
-//   }
-//   @include breakpoint(fhd){
-//     background-color: green;
-//   } 
-        // @include breakpoint(lp-lg){
-//     background-color: black;
-//   }
-        // @include breakpoint(lp){
-//     background-color: blue;
-//   }
-        // @include breakpoint(md){
-//     background-color: orangered;
-//   }
-        // @include breakpoint(sm){
-//     background-color: grey;
-//   }
-//   @include breakpoint(xsm){
-//     background-color: rgb(255, 0, 230);
-//   }
-//   @include breakpoint(xxsm){
-//     background-color: yellow;
-//   }

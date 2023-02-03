@@ -7,10 +7,7 @@
     color: $colorOp;
     font-weight: 100;
 }
-@mixin line-border{
-    cursor: pointer;
-    border-bottom: 1px solid $colorOp;
-}
+
 @mixin alink-props{
     display: flex;
     border-radius: 50%;
@@ -18,9 +15,13 @@
     align-items: center;
     text-decoration: none;
     transition: $transition;
+    cursor: pointer;
+    &:hover{
+      background-color: $colorBlack;
+    }
 }
-// BREAK POINTS
 
+// BREAK POINTS
 @mixin breakpoint($point){
     $my-map: map-get($breakpoints, $point ); 
     @if $my-map {
@@ -33,7 +34,6 @@
 };
 //PADDINGS ---
 @mixin paddings{
-    padding: 10px !important;
     @include breakpoint(fk){
         padding: 50px 50px 0 50px !important;
       }
@@ -49,16 +49,23 @@
 };
 @mixin marginLoremDetails{
     @include breakpoint(fk){
-        margin: 50px auto 0 50px ;
+        margin-left: 50px;
+        margin-top: 50px ;
       }
     @include breakpoint(lp-lg){
-        margin: 30px auto 0 30px;
+        margin-left: 30px;
+        margin-top: 30px ;
+
       }
     @include breakpoint(md){
-        margin: 20px auto 0 20px ;
+        margin-left: 0;
+        margin-top: 20px ;
+
       }
     @include breakpoint(sm){
-        margin: 20px auto 0 20px;
+        margin-left: 0;
+        margin-top: 10px ;
+
       }
 };
 //FONT SIZES ----
@@ -73,6 +80,24 @@
         font-size: 30px;
 }
 }
+//footer links
+@mixin font-size-footerlinks{
+  @include breakpoint(fk){
+    font-size: 16px !important;
+}
+      @include breakpoint(lp-lg){
+        font-size: 13px !important;
+}
+      @include breakpoint(lp){
+        font-size: 10px !important;
+}
+      @include breakpoint(sm){
+        font-size: 10px !important;
+}
+      @include breakpoint(xxsm){
+        font-size: 10px !important;
+}
+}
 //title
 @mixin fontsizesTitle{
     @include breakpoint(fk){
@@ -82,8 +107,11 @@
             font-size: 50px;
     }
     @include breakpoint(md){
-        font-size: 30px;
-}
+        font-size: 40px;
+    }
+    @include breakpoint(sm){
+      font-size: 30px;
+    }
 }
 //paragraph
 @mixin fontsizeParagraph {
@@ -125,26 +153,43 @@
   }
 
 }
+@mixin rightSizes{
+  @include breakpoint(fk){
+    height: 304px;
+    width: 304px;
+}
+ @include breakpoint(lp-lg){
+    height: 182px;
+    width: 182px;
+}
+@include breakpoint(lp){
+height: 150px;
+width: 150px;
+}
+@include breakpoint(md){
+    height: 132px;
+    width: 132px;
+}
+@include breakpoint(xxsm){
+    height: 100px;
+    width: 100px;
+}
+}
 @mixin numberFsize{
         @include breakpoint(fk){
-            font-size: 404px;
-            // margin-left: 202px;
+            font-size: 304px;
       }
          @include breakpoint(lp-lg){
-            font-size: 232px;
-            // margin-left: 116px;
+            font-size: 182px;
       }
       @include breakpoint(lp){
-        font-size: 200px;
-        // margin-left: 100px;
+        font-size: 150px;
     }
         @include breakpoint(md){
             font-size: 132px;
-            // margin-left: 69px;
       }
       @include breakpoint(xxsm){
             font-size: 100px;
-            // margin-left: 50px;
       }
     
 }
