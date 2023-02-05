@@ -13,8 +13,14 @@
     background-repeat: no-repeat;
     background-size: contain;
     @include breakpoint(md){
-        min-height: 50vh;
-        flex: 1 1 40%;
+        min-height: 70vh;
+        flex: 1 1 60%;
+        
+}
+@include breakpoint(sm){
+    min-height: 50vh;
+    flex: 1 1 60%;
+    
 }
 }
 
@@ -57,12 +63,17 @@
     font-weight: 900;
     font-family: 'Poppins', sans-serif;
     color: $colorHeader;
+    flex-shrink: 2;
     -webkit-text-stroke-color: $colorHeader;
     -webkit-text-stroke-width: 4px;
+    color: green;
+    @include fontsizesTitle;
+    @include breakpoint(lp){
+        font-size: 30px;
+      }
     @include breakpoint(lp){
     -webkit-text-stroke-width: 3px;
     }
-    @include fontsizesTitle;
 }
 .smallDetails{
     color: $colorOp;
@@ -85,7 +96,6 @@
 .imgLeft{
     @include breakpoint(fk){
         margin-left: -70px;
-        // flex: 1 1 10%;
     }
     @include breakpoint(lp-lg){
         margin-left: -54px;
@@ -100,21 +110,20 @@
 .imgRight{
     z-index: 2;
     position: relative;
-//    @include rightSizes;
    @include sizeimges;
         flex-grow: 0;
 @include breakpoint(fk){
     margin-right: -200px;
 }
 @include breakpoint(lp-lg){
-    margin-right: -150px;
+    margin-right: -100px;
 }
 @include breakpoint(lp){
-  margin-right: -100px;
+  margin-right: -90px;
 }
 @include breakpoint(md){
     margin-right: 0;
-    right: -31px;
+    right: -27px;
     top: 10%;
   }
 }
@@ -128,10 +137,10 @@
     -webkit-text-stroke-color: $colorHeader;
     -webkit-text-stroke-width: 1px;
     @include breakpoint(fk){
-        margin-right: -150px;
+        margin-right: -200px;
     }
     @include breakpoint(lp-lg){
-        margin-right: -94px;
+        margin-right: -100px;
     }
     @include breakpoint(lp){
       margin-right: -64px;

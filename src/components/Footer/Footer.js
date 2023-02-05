@@ -42,7 +42,7 @@ export default function Footer() {
   ]
   return (
     <div className={`footer container-fluid row ${styles.footer} mb-3`}>
-      <div className={`col-12 col-md-6 d-flex flex-column position-relative p-0 mb-3 mb-md-0 p-0 ${styles.footernavbox}`}>
+      <div className={`col-12 col-md-6 d-flex flex-column position-relative p-0 mb-3 mb-md-2 mb-md-0 ${styles.footernavbox}`}>
         <div className={`nav py-2 m-0 ${styles.footerNav}`} >
           {footerArray.map((item, index)=>(
             <a className={ActiveLink===index?`${styles.footerlink} nav-link p-0 me-3 me-xxl-5 ${styles.active}`:`${homeActive && index===0?styles.homeActive: ''} nav-link p-0 me-3 me-xxl-5 ${styles.footerlink}`} key={index} onClick={()=>handleFooterNavLine(item, index)} href>0{item}</a>
