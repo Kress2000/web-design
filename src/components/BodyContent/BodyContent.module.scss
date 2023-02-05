@@ -2,10 +2,12 @@
 @import "/public/_variables/variables";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,200;1,300;1,900&family=Ubuntu:ital,wght@0,300;0,500;1,400;1,700&display=swap');
 
-// .bodyContainer{
-//     // flex: 1 1 60%;
+.bodyContainer{
+    @include breakpoint(lht){
+        background-color: orange !important
+    }
     
-// }
+}
 
 .middleBox{
     background-image: url("../../../public/imgs/foodmeal.png");
