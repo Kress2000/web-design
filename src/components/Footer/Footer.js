@@ -41,7 +41,7 @@ export default function Footer() {
 
   ]
   return (
-    <div className={`footer container-fluid row ${styles.footer}`}>
+    <div className={`footer container-fluid row ${styles.footer} mb-3`}>
       <div className={`col-12 col-md-6 d-flex flex-column position-relative p-0 mb-3 mb-md-0 p-0 ${styles.footernavbox}`}>
         <div className={`nav py-2 m-0 ${styles.footerNav}`} >
           {footerArray.map((item, index)=>(

@@ -57,6 +57,10 @@
         margin-top: 30px ;
 
       }
+      @include breakpoint(lp){
+        margin-left: 20px;
+        margin-top: 20px ;
+      }
     @include breakpoint(md){
         margin-left: 0;
         margin-top: 20px ;
@@ -70,15 +74,21 @@
 };
 //FONT SIZES ----
 @mixin fontSizeuppercase{
-    @include breakpoint(fk){
-        font-size: 82px;
-    }
-    @include breakpoint(lp-lg){
-            font-size: 50px;
-    }
-    @include breakpoint(md){
-        font-size: 30px;
-}
+  @include breakpoint(fk){
+    font-size: 16px;
+  }
+  @include breakpoint(lp-lg){
+    font-size: 10px;
+  }
+  @include breakpoint(lp){
+    font-size: 9px;
+  }
+  @include breakpoint(md){
+    font-size: 10px;
+  }
+  @include breakpoint(xxsm){
+    font-size: 8px;
+  }
 }
 //footer links
 @mixin font-size-footerlinks{
@@ -101,25 +111,35 @@
 //title
 @mixin fontsizesTitle{
     @include breakpoint(fk){
-        font-size: 82px;
+        font-size: 62px;
+        font-weight: 900;
     }
+    @include breakpoint(fk){
+      font-size: 50px;
+  }
     @include breakpoint(lp-lg){
-            font-size: 50px;
+            font-size: 45px;
+    }
+    @include breakpoint(lp){
+      font-size: 30px;
     }
     @include breakpoint(md){
-        font-size: 40px;
+        font-size: 35px;
     }
     @include breakpoint(sm){
       font-size: 30px;
     }
 }
-//paragraph
+//paragraphfontsizesTitle
 @mixin fontsizeParagraph {
     @include breakpoint(fk){
         font-size: 16px;
       }
       @include breakpoint(lp-lg){
-        font-size: 12px;
+        font-size: 10px;
+      }
+      @include breakpoint(lp){
+        font-size: 9px;
       }
       @include breakpoint(md){
         font-size: 10px;
@@ -140,8 +160,8 @@
         width: 232px;
   }
   @include breakpoint(lp){
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
 }
     @include breakpoint(md){
         height: 132px;
@@ -177,10 +197,10 @@ width: 150px;
 }
 @mixin numberFsize{
         @include breakpoint(fk){
-            font-size: 304px;
+            font-size: 404px;
       }
          @include breakpoint(lp-lg){
-            font-size: 182px;
+            font-size: 232px;
       }
       @include breakpoint(lp){
         font-size: 150px;

@@ -2,29 +2,34 @@
 @import "/public/_variables/variables";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,200;1,300;1,900&family=Ubuntu:ital,wght@0,300;0,500;1,400;1,700&display=swap');
 
-.bodyContainer{
-    flex: 1 1 40%;
-}
+// .bodyContainer{
+//     // flex: 1 1 60%;
+    
+// }
+
 .middleBox{
-    flex: 1 1 50%;
     background-image: url("../../../public/imgs/foodmeal.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     @include breakpoint(md){
-        min-height: 40vh;
+        min-height: 50vh;
+        flex: 1 1 40%;
 }
 }
-.middleBoxMD{
-    flex: 1 1 40%;
-}
+
 .fisrtBox{
-    justify-content: space-evenly;
     align-items: flex-start;
+    justify-content: space-between;
 }
 .rightBox, 
 .fisrtBox{
-    flex: 1 1 20%;
+    // height: 80vh;
+    margin: 0;
+    padding: 0;
+}
+.bodyBox{
+    height: 80vh;
 }
 .p{
     @include breakpoint(fk){
@@ -32,6 +37,9 @@
       }
       @include breakpoint(lp-lg){
         margin: 0 0 30px 30px ;
+      }
+      @include breakpoint(lp){
+        margin: 0 0 30px 20px ;
       }
       @include breakpoint(md){
         margin: 0 0 20px 0;
@@ -48,8 +56,12 @@
 .title{
     font-weight: 900;
     font-family: 'Poppins', sans-serif;
-    font-family: 'Ubuntu', sans-serif;
     color: $colorHeader;
+    -webkit-text-stroke-color: $colorHeader;
+    -webkit-text-stroke-width: 4px;
+    @include breakpoint(lp){
+    -webkit-text-stroke-width: 3px;
+    }
     @include fontsizesTitle;
 }
 .smallDetails{
@@ -57,36 +69,45 @@
     font-weight: bolder;
     text-transform: uppercase;
     letter-spacing: 1px;
-    @include fontsizeParagraph;
+    @include fontSizeuppercase;
 }
 // images
+.imgBox{
+    flex: 1 1 40%;
+    display: flex;
+    align-items: center;
+    width: 100%
+}
+
+.img, .h1{
+    @include sizeimges;
+}
 .imgLeft{
     @include breakpoint(fk){
-        margin-left: -100px;
+        margin-left: -70px;
+        // flex: 1 1 10%;
     }
     @include breakpoint(lp-lg){
-        margin-left: -64px;
+        margin-left: -54px;
   }
   @include breakpoint(lp){
-      margin-left: -54px;
+      margin-left: -44px;
     }
     @include breakpoint(md){
         margin-left: -31px;
     }
 }
-.img, .h1{
-    @include sizeimges;
-}
 .imgRight{
     z-index: 2;
     position: relative;
-    flex-grow: 0 !important;
-   @include rightSizes;
+//    @include rightSizes;
+   @include sizeimges;
+        flex-grow: 0;
 @include breakpoint(fk){
-    margin-right: -250px;
+    margin-right: -200px;
 }
 @include breakpoint(lp-lg){
-    margin-right: -200px;
+    margin-right: -150px;
 }
 @include breakpoint(lp){
   margin-right: -100px;
@@ -101,10 +122,10 @@
 .h1Number{
     @include numberFsize;
     z-index: 1;
-    stroke: $colorOp;
+    stroke: $colorHeader;
     color: transparent;
     stroke-width: 1px;
-    -webkit-text-stroke-color: $colorOp;
+    -webkit-text-stroke-color: $colorHeader;
     -webkit-text-stroke-width: 1px;
     @include breakpoint(fk){
         margin-right: -150px;
@@ -116,6 +137,12 @@
       margin-right: -64px;
     }
     @include breakpoint(md){
-        margin-right: 50px;
+        margin-right: 40px;
+    }
+    @include breakpoint(sm){
+        margin-right: 30px;
+    }
+    @include breakpoint(xxsm){
+        margin-right: 20px;
     }
 }
